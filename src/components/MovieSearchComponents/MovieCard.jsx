@@ -1,5 +1,3 @@
-import React from "react";
-
 function MovieCard({ movie, btnFunction, btnClass, btnText }) {
   return (
     <div className="movie-card">

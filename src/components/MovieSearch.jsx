@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Search from "./MovieSearchComponents/Search";
 import SearchResults from "./MovieSearchComponents/SearchResults";
 import WatchList from "./MovieSearchComponents/WatchList";
+import Popup from "./MovieSearchComponents/Popup";
 
 function MovieSearch() {
   const [searchResults, setSearchResults] = useState([]);
@@ -26,15 +27,25 @@ function MovieSearch() {
     //gör searchResults till tom array:
     setSearchResults([]);
   }
+  // popup:
+  const [moviePopup, setMoviePopup] = useState(null);
+  const [popupMessage, setPopupMessage] = useState("");
 
   function AddToWatchList(movieToAdd) {
     if (!watchList.some((movie) => movie.imdbID === movieToAdd.imdbID)) {
       SetWatchList([...watchList, movieToAdd]);
     }
+    setPopupMessage("✅ Added to watchlist!");
+    setMoviePopup(movieToAdd);
   }
 
   function RemoveFromWatchList(idToRemove) {
+    const movieToRemove = watchList.find(
+      (movie) => movie.imdbID === idToRemove,
+    );
     SetWatchList(watchList.filter((movie) => movie.imdbID !== idToRemove));
+    setPopupMessage("🗑️ Removed from watchlist.");
+    setMoviePopup(movieToRemove);
   }
 
   async function HandleSearch(event, searchTerm) {
@@ -54,9 +65,16 @@ function MovieSearch() {
 
   return (
     <>
-      <h1 className="app-title">MOVIE WATCH LIST</h1>
+      <div className="header-box">
+        <h1 className="app-title">M O V I E - Q U E U E</h1>
+        <Search handleSearch={HandleSearch} clearResults={clearResults} />
+      </div>
+      <Popup
+        movie={moviePopup}
+        onClose={() => setMoviePopup(null)}
+        message={popupMessage}
+      />
       {/*search form*/}
-      <Search handleSearch={HandleSearch} clearResults={clearResults} />
       <SearchResults
         searchResults={searchResults}
         addToWatchList={AddToWatchList}

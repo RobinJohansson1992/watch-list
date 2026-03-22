@@ -15,7 +15,7 @@ function Search({ handleSearch, clearResults }) {
 
   return (
     <div className="search-section">
-      <h2 className="section-title">SEARCH MOVIES</h2>
+      <h2 className="section-title">SEARCH MOVIES:</h2>
       <form
         className="search-form"
         onSubmit={(event) => handleSearch(event, searchTerm)}
@@ -28,11 +28,12 @@ function Search({ handleSearch, clearResults }) {
           onChange={handleSearchChange}
         />
         <button type="submit" className="search-button">
-          SEARCH
+          🔍
         </button>
         <button className="search-button" onClick={handleSearchClear}>
-          CLEAR
+          🎬
         </button>
+        <button className="search-button">⭐</button>
       </form>
     </div>
   );
