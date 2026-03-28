@@ -9,9 +9,27 @@ function MovieCard({ movie, btnFunction, btnClass, btnText }) {
       <h4 className="movie-title">
         {movie.Title}({movie.Year})
       </h4>
+      <div className="card-buttons">
+      <button onClick={btnFunction} className="rateButton">
+        RATE
+      </button>
       <button onClick={btnFunction} className={btnClass}>
         {btnText}
       </button>
+      </div>
+      
+      {/* <div className="rateBtns">
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+        <button className="rateBtn"></button>
+      </div> */}
     </div>
   );
 }
