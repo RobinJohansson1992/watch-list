@@ -10,7 +10,7 @@ function SearchResults({ searchResults, addToWatchList }) {
             movie={movie}
             btnFunction={() => addToWatchList(movie)}
             btnClass="add-button"
-            btnText="Add to watch list"
+            btnText="ADD MOVIE"
           />
         ))}
       </div>
