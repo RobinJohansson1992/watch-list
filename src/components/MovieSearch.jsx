@@ -66,7 +66,7 @@ function MovieSearch() {
   return (
     <>
       <div className="header-box">
-        <h1 className="app-title">M O V I E - Q U E U E</h1>
+        <h1 className="app-title">M O V I E - L I S T</h1>
         <Search handleSearch={HandleSearch} clearResults={clearResults} />
       </div>
       <Popup
