@@ -99,7 +99,14 @@ body {
   padding-bottom: 1rem;
   border-radius: 0rem 0rem 35rem 35rem;
 }
-
+.search-form {
+  display: flex;
+  align-items: center;
+}
+.search-buttons {
+  display: flex;
+  flex-direction: row;
+}
 .search-form {
   display: flex;
   gap: 8px;
@@ -398,6 +405,7 @@ body {
 
   .movie-card {
     border: 1px solid rgba(193, 183, 255, 0.407);
+    border: none;
     border-radius: 10px;
     padding: 19px;
     display: flex;
@@ -415,6 +423,7 @@ body {
     width: 8rem;
     margin: 0.5rem;
     box-shadow: 2px 2px 7px rgba(193, 183, 255, 0.407);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.407);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -443,15 +452,21 @@ body {
   }
   body {
     display: flex;
-    width: 130%;
+    width: 100%;
     justify-content: center;
+    background: linear-gradient(
+      90deg,
+      rgb(36, 36, 36) 9%,
+      rgba(48, 48, 48, 1) 50%,
+      rgb(35, 35, 35) 91%
+    );
   }
 
   .header-box {
     font-size: 20px;
     font-weight: bold;
     margin-top: 0px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background-color: #151515;
     background: #0d0d0d;
     background: linear-gradient(
@@ -461,14 +476,14 @@ body {
       rgba(13, 13, 13, 1) 100%
     );
     width: 270%;
-    height: 10.5rem;
+    height: 9.5rem;
     border-radius: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-shadow: 5px 2px 5px rgb(0, 0, 0);
-    box-shadow: 2px 2px 25px rgba(191, 183, 255, 0.262);
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.262);
     transform: scale(1.1);
     padding: 4.5rem 0rem 0rem 0rem;
     border-radius: 0rem 0rem 35rem 35rem;
@@ -480,7 +495,8 @@ body {
   .header-box h1 {
     color: rgb(248, 248, 248);
     text-shadow: 5px 2px 5px rgb(0, 0, 0);
-    padding-bottom: 0.2rem;
+    padding-bottom: 0rem;
+    font-size: 2rem;
   }
   #watch-title {
     display: flex;
@@ -500,37 +516,83 @@ body {
     margin-left: 0rem;
     margin-top: 2rem;
     background-color: rgba(155, 160, 255, 0.119);
+    background-color: rgba(54, 64, 75, 0.34);
     border-radius: 0rem 0rem 0.6rem 0.6rem;
     padding-top: 0.7rem;
-    padding-bottom: 1.1rem;
+    padding-bottom: 2rem;
     border-radius: 0rem 0rem 35rem 35rem;
     -webkit-border-radius: 0rem 0rem 35rem 35rem;
     -moz-border-radius: 0rem 0rem 35rem 35rem;
     -ms-border-radius: 0rem 0rem 35rem 35rem;
     -o-border-radius: 0rem 0rem 35rem 35rem;
   }
+  .search-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .search-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 110%;
+    margin-top: 6px;
+  }
   .search-input {
     flex-grow: 1;
     padding: 8px;
-    height: 1.8em;
-    width: 100%;
+    height: 1.3em;
+    width: 110%;
     border: 1px solid #ccc;
     border-radius: 0.4rem;
     font-size: 16px;
-    margin-left: 0.7rem;
-    margin-right: 0.5rem;
-    margin-top: 3px;
-    background-color: rgba(244, 244, 244, 0.877);
-    -webkit-border-radius: 0.4rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    box-shadow: 3px 3px 10px black;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    background-color: rgba(242, 242, 242, 0.877);
+    -webkit-border-radius: 0rem;
     -moz-border-radius: 0.4rem;
     -ms-border-radius: 0.4rem;
     -o-border-radius: 0.4rem;
+  }
+  .search-input::placeholder {
+    display: flex;
+    text-align: center;
+  }
+  .search-button {
+    background-color: rgba(255, 255, 255, 0.078);
+    background: linear-gradient(
+      90deg,
+      rgb(18, 18, 18) 0%,
+      rgba(59, 74, 94, 0.504) 50%,
+      rgb(20, 20, 20) 100%
+    );
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+    width: 6rem;
+    height: 2.5rem;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.318);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
   }
   .section-title {
     display: none;
   }
   .search-button {
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 1px;
   }
   .movie-title {
     font-weight: 500;

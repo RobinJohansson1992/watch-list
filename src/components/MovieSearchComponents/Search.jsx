@@ -27,13 +27,15 @@ function Search({ handleSearch, clearResults }) {
           value={searchTerm}
           onChange={handleSearchChange}
         />
-        <button type="submit" className="search-button">
-          🔍
-        </button>
-        <button className="search-button" onClick={handleSearchClear}>
-          🎬
-        </button>
-        <button className="search-button">⭐</button>
+        <div className="search-buttons">
+          <button type="submit" className="search-button">
+            🔍
+          </button>
+          <button className="search-button" onClick={handleSearchClear}>
+            🎬
+          </button>
+          <button className="search-button">⭐</button>
+        </div>
       </form>
     </div>
   );
