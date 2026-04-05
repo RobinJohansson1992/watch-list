@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Search({ handleSearch, clearResults }) {
+function Search({ handleSearch, clearResults, onShowRated, onShowWatchlist }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleSearchChange(event) {
@@ -11,6 +11,7 @@ function Search({ handleSearch, clearResults }) {
     setSearchTerm("");
     //hämta från movieSearch:
     clearResults();
+    onShowWatchlist();
   }
 
   return (
@@ -34,7 +35,7 @@ function Search({ handleSearch, clearResults }) {
           <button className="search-button" onClick={handleSearchClear}>
             🎬
           </button>
-          <button className="search-button">⭐</button>
+          <button className="search-button" onClick={onShowRated}>⭐</button>
         </div>
       </form>
     </div>

@@ -1,4 +1,4 @@
-function MovieCard({ movie, btnFunction, btnClass, btnText }) {
+function MovieCard({ movie, btnFunction, btnClass, btnText, onRate }) {
   return (
     <div className="movie-card">
       {movie.Poster === "N/A" ? (
@@ -10,26 +10,13 @@ function MovieCard({ movie, btnFunction, btnClass, btnText }) {
         {movie.Title}({movie.Year})
       </h4>
       <div className="card-buttons">
-      <button onClick={btnFunction} className="rateButton">
-        RATE
-      </button>
-      <button onClick={btnFunction} className={btnClass}>
-        {btnText}
-      </button>
+        <button onClick={() => onRate(movie)} className="rateButton">
+          RATE
+        </button>
+        <button onClick={btnFunction} className={btnClass}>
+          {btnText}
+        </button>
       </div>
-      
-      {/* <div className="rateBtns">
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-        <button className="rateBtn"></button>
-      </div> */}
     </div>
   );
 }
