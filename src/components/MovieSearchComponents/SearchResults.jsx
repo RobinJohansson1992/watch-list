@@ -1,19 +1,18 @@
 import MovieCard from "./MovieCard";
 
-function SearchResults({ searchResults, addToWatchList }) {
+function SearchResults({ searchResults, addToWatchList, onRate }) {
   return (
-    <div className="search-results">
-      <div className="movie-grid">
-        {searchResults.map((movie) => (
-          <MovieCard
-            key={movie.imdbID}
-            movie={movie}
-            btnFunction={() => addToWatchList(movie)}
-            btnClass="add-button"
-            btnText="ADD MOVIE"
-          />
-        ))}
-      </div>
+    <div className="movie-grid">
+      {searchResults.map((movie) => (
+        <MovieCard
+          key={movie.imdbID}
+          movie={movie}
+          btnFunction={() => addToWatchList(movie)}
+          btnClass="add-button"
+          btnText="ADD MOVIE"
+          onRate={onRate}  // ← ny prop
+        />
+      ))}
     </div>
   );
 }

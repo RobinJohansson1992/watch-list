@@ -1,6 +1,6 @@
 import MovieCard from "./MovieCard";
 
-function WatchList({ movies, removeFromWatchList }) {
+function WatchList({ movies, removeFromWatchList, onRate }) {
   return (
     <div className="watchlist-section">
       <h2 className="section-title" id="watch-title">
@@ -18,6 +18,7 @@ function WatchList({ movies, removeFromWatchList }) {
               btnFunction={() => removeFromWatchList(movie.imdbID)}
               btnClass="remove-button"
               btnText="REMOVE"
+              onRate={onRate}
             />
           ))}
         </div>
