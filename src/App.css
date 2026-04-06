@@ -442,22 +442,22 @@ body {
 }
 @media (max-width: 768px) {
   .rated-list {
-  list-style: none;
-  padding: 0;
-  width: 90vw;
-  max-height: 250px;
-  margin: 0 auto;
-  overflow-y: auto;
-}
-.rated-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 80vw;
-  height: 9vh;
-  padding: 12px;
-  border-bottom: 1px solid #333;
-}
+    list-style: none;
+    padding: 0;
+    width: 90vw;
+    max-height: 250px;
+    margin: 0 auto;
+    overflow-y: auto;
+  }
+  .rated-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 80vw;
+    height: 9vh;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+  }
   .movie-grid {
     /* display: grid;
     width: 100vw;
