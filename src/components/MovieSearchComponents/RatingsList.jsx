@@ -5,7 +5,9 @@ function RatedList() {
 
   return (
     <div className="watchlist-section">
-      <h2 className="section-title" id="watch-title">R A T I N G S</h2>
+      <h2 className="section-title" id="watch-title">
+        R A T I N G S
+      </h2>
       {sorted.length < 1 ? (
         <p className="empty-watchlist">Nothing here yet...</p>
       ) : (
